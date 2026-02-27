@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bh-01 Dev</title>
+    <link rel="stylesheet" href="/src/themes/default.css" />
+    <style>
+      body {
+        font-family: var(--bh-font-sans);
+        background: var(--bh-color-surface);
+        color: var(--bh-color-text);
+        padding: var(--bh-spacing-8);
+        margin: 0;
+      }
+      section {
+        margin-bottom: var(--bh-spacing-8);
+      }
+      h2 {
+        margin-bottom: var(--bh-spacing-4);
+      }
+      .row {
+        display: flex;
+        gap: var(--bh-spacing-4);
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: var(--bh-spacing-4);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>bh-01 Component Library</h1>
+
+    <section>
+      <h2>bh-button</h2>
+      <div class="row">
+        <bh-button variant="primary">Primary</bh-button>
+        <bh-button variant="secondary">Secondary</bh-button>
+        <bh-button variant="ghost">Ghost</bh-button>
+        <bh-button variant="danger">Danger</bh-button>
+      </div>
+      <div class="row">
+        <bh-button size="sm">Small</bh-button>
+        <bh-button size="md">Medium</bh-button>
+        <bh-button size="lg">Large</bh-button>
+      </div>
+      <div class="row">
+        <bh-button>
+          <bh-icon slot="prefix" name="search"></bh-icon>
+          Search
+        </bh-button>
+        <bh-button variant="secondary">
+          Settings
+          <bh-icon slot="suffix" name="chevron-down"></bh-icon>
+        </bh-button>
+        <bh-button variant="danger">
+          <bh-icon slot="prefix" name="x"></bh-icon>
+          Delete
+        </bh-button>
+      </div>
+      <div class="row">
+        <bh-button icon-only label="Close" variant="ghost"><bh-icon slot="prefix" name="x"></bh-icon></bh-button>
+        <bh-button icon-only label="Add" variant="primary"><bh-icon slot="prefix" name="plus"></bh-icon></bh-button>
+        <bh-button icon-only label="Menu" variant="secondary"><bh-icon slot="prefix" name="menu"></bh-icon></bh-button>
+        <bh-button icon-only label="Search" size="lg"><bh-icon slot="prefix" name="search"></bh-icon></bh-button>
+      </div>
+      <div class="row">
+        <bh-button disabled>Disabled</bh-button>
+      </div>
+    </section>
+
+    <section>
+      <h2>bh-icon</h2>
+      <div class="row">
+        <bh-icon name="x"></bh-icon>
+        <bh-icon name="check"></bh-icon>
+        <bh-icon name="plus"></bh-icon>
+        <bh-icon name="minus"></bh-icon>
+        <bh-icon name="search"></bh-icon>
+        <bh-icon name="chevron-down"></bh-icon>
+        <bh-icon name="chevron-up"></bh-icon>
+        <bh-icon name="chevron-left"></bh-icon>
+        <bh-icon name="chevron-right"></bh-icon>
+        <bh-icon name="menu"></bh-icon>
+      </div>
+      <div class="row">
+        <bh-icon name="check" size="sm"></bh-icon>
+        <bh-icon name="check" size="md"></bh-icon>
+        <bh-icon name="check" size="lg"></bh-icon>
+      </div>
+    </section>
+
+    <section>
+      <h2>bh-text</h2>
+      <bh-text variant="heading">Heading Text</bh-text>
+      <bh-text variant="body">Body text — the quick brown fox jumps over the lazy dog.</bh-text>
+      <bh-text variant="small">Small text for captions and metadata.</bh-text>
+      <bh-text variant="code">const code = "monospace";</bh-text>
+      <div style="width: 200px;">
+        <bh-text truncate>This is a very long text that should be truncated with an ellipsis.</bh-text>
+      </div>
+    </section>
+
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

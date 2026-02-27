@@ -1,0 +1,53 @@
+{
+  "name": "@bruk-io/bh-01",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "description": "Lit 3 web component library using atomic design methodology",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens": "./dist/tokens/index.css",
+    "./theme": "./dist/themes/default.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "lint": "tsc --noEmit",
+    "test": "web-test-runner",
+    "preview": "vite preview",
+    "analyze": "cem analyze --litelement --globs \"src/**/*.ts\" --exclude \"**/*.test.ts\" --exclude \"**/*.stories.ts\"",
+    "storybook": "npm run analyze && storybook dev -p 6006",
+    "build-storybook": "npm run analyze && storybook build"
+  },
+  "dependencies": {
+    "@lit/context": "^1.1.6",
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.0.1",
+    "@custom-elements-manifest/analyzer": "^0.11.0",
+    "@open-wc/testing": "^4.0.0",
+    "@storybook/addon-a11y": "^10.2.8",
+    "@storybook/addon-docs": "^10.2.8",
+    "@storybook/addon-vitest": "^10.2.8",
+    "@storybook/web-components-vite": "^10.2.8",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@web/dev-server-esbuild": "^1.0.3",
+    "@web/test-runner": "^0.19.0",
+    "@web/test-runner-playwright": "^0.11.0",
+    "playwright": "^1.58.2",
+    "storybook": "^10.2.8",
+    "typescript": "~5.7.0",
+    "vite": "^6.1.0",
+    "vite-plugin-static-copy": "^2.2.0",
+    "vitest": "^4.0.18"
+  },
+  "customElements": "custom-elements.json"
+}

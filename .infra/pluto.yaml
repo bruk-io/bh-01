@@ -1,0 +1,3 @@
+repo:
+  description: "Lit 3 web component library using atomic design methodology"
+  visibility: public

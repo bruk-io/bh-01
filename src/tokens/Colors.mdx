@@ -1,0 +1,74 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Tokens/Primitives/Colors" />
+
+# Color Primitives
+
+Named color palette. These are **never used directly in components** — they feed into semantic tokens via the theme.
+
+## Accents
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '0.75rem' }}>
+  {[
+    ['mandarin', '#FF6B35'],
+    ['sky', '#5DAFD6'],
+    ['pomegranate', '#F83E1F'],
+    ['amaranth', '#E92C63'],
+  ].map(([name, hex]) => (
+    <div key={name} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      <div style={{ width: '100%', height: '3rem', borderRadius: '0.375rem', background: `var(--bh-color-${name})`, border: '1px solid var(--bh-color-border)' }} />
+      <code style={{ fontSize: '0.7rem' }}>--bh-color-{name}</code>
+      <span style={{ fontSize: '0.6rem', color: 'var(--bh-color-text-muted)' }}>{hex}</span>
+    </div>
+  ))}
+</div>
+
+## Dark Neutrals
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '0.75rem' }}>
+  {[
+    ['cod', '#0D0C0A'],
+    ['thunder', '#151412'],
+    ['mine-shaft', '#222120'],
+    ['tundora', '#2A2826'],
+    ['boulder', '#5A5754'],
+    ['bitter', '#777875'],
+  ].map(([name, hex]) => (
+    <div key={name} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      <div style={{ width: '100%', height: '3rem', borderRadius: '0.375rem', background: `var(--bh-color-${name})`, border: '1px solid var(--bh-color-border)' }} />
+      <code style={{ fontSize: '0.7rem' }}>--bh-color-{name}</code>
+      <span style={{ fontSize: '0.6rem', color: 'var(--bh-color-text-muted)' }}>{hex}</span>
+    </div>
+  ))}
+</div>
+
+## Light Neutrals
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '0.75rem' }}>
+  {[
+    ['swiss-coffee', '#C8C4BC'],
+    ['pearl', '#E8E4DC'],
+    ['alabaster', '#F0ECE4'],
+  ].map(([name, hex]) => (
+    <div key={name} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      <div style={{ width: '100%', height: '3rem', borderRadius: '0.375rem', background: `var(--bh-color-${name})`, border: '1px solid var(--bh-color-border)' }} />
+      <code style={{ fontSize: '0.7rem' }}>--bh-color-{name}</code>
+      <span style={{ fontSize: '0.6rem', color: 'var(--bh-color-text-muted)' }}>{hex}</span>
+    </div>
+  ))}
+</div>
+
+## Base
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '0.75rem' }}>
+  {[
+    ['black', '#000000'],
+    ['white', '#FFFFFF'],
+  ].map(([name, hex]) => (
+    <div key={name} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      <div style={{ width: '100%', height: '3rem', borderRadius: '0.375rem', background: `var(--bh-color-${name})`, border: '1px solid var(--bh-color-border)' }} />
+      <code style={{ fontSize: '0.7rem' }}>--bh-color-{name}</code>
+      <span style={{ fontSize: '0.6rem', color: 'var(--bh-color-text-muted)' }}>{hex}</span>
+    </div>
+  ))}
+</div>

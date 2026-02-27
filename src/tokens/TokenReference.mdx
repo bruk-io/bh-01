@@ -1,0 +1,171 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Tokens/Reference" />
+
+# Token Reference
+
+This is the **contract** that all themes must implement. Components only reference these semantic token names — never primitives directly.
+
+To create a new theme, provide values for every token listed below.
+
+---
+
+## Architecture
+
+<div style={{ padding: '1.5rem', background: 'var(--bh-color-surface)', borderRadius: '0.5rem', fontFamily: 'var(--bh-font-mono)', fontSize: '0.8rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+  <div><strong>Layer 1: Primitives</strong> — Raw values (colors, spacing, sizes)</div>
+  <div style={{ color: 'var(--bh-color-text-muted)' }}>  ↓ Theme maps primitives to...</div>
+  <div><strong>Layer 2: Semantic Tokens</strong> — Purpose-driven aliases (this page)</div>
+  <div style={{ color: 'var(--bh-color-text-muted)' }}>  ↓ Components read semantic tokens, consumers can override with...</div>
+  <div><strong>Layer 3: Component Overrides</strong> — Per-component knobs (e.g. --bh-button-bg)</div>
+</div>
+
+---
+
+## Surfaces
+
+Background colors for different elevation levels.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+  {[
+    ['--bh-color-surface', 'Page/app background. The base layer.'],
+    ['--bh-color-surface-raised', 'Cards, inputs, elevated containers above the surface.'],
+    ['--bh-color-surface-overlay', 'Modals, dropdowns, popovers. Highest elevation.'],
+  ].map(([token, desc]) => (
+    <div key={token} style={{ display: 'flex', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '16rem', flexShrink: 0, color: 'var(--bh-color-primary)' }}>{token}</code>
+      <span style={{ fontSize: '0.8rem' }}>{desc}</span>
+    </div>
+  ))}
+</div>
+
+## Text
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '1rem' }}>
+  {[
+    ['--bh-color-text', 'Primary content text. Headings, body, labels.'],
+    ['--bh-color-text-muted', 'Secondary text. Placeholders, descriptions, captions.'],
+    ['--bh-color-text-inverse', 'Text on dark or colored backgrounds (e.g. on primary buttons).'],
+  ].map(([token, desc]) => (
+    <div key={token} style={{ display: 'flex', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '16rem', flexShrink: 0, color: 'var(--bh-color-primary)' }}>{token}</code>
+      <span style={{ fontSize: '0.8rem' }}>{desc}</span>
+    </div>
+  ))}
+</div>
+
+## Primary (Accent)
+
+The brand/accent color. Used for buttons, links, focus rings, active states.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.5rem' }}>
+  {[
+    ['--bh-color-primary', 'Default primary color. Buttons, links, selected states.'],
+    ['--bh-color-primary-hover', 'Hover state for primary elements.'],
+    ['--bh-color-primary-active', 'Active/pressed state for primary elements.'],
+    ['--bh-color-primary-text', 'Text/icon color on top of primary backgrounds.'],
+  ].map(([token, desc]) => (
+    <div key={token} style={{ display: 'flex', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '16rem', flexShrink: 0, color: 'var(--bh-color-primary)' }}>{token}</code>
+      <span style={{ fontSize: '0.8rem' }}>{desc}</span>
+    </div>
+  ))}
+</div>
+
+## Secondary
+
+Neutral interactive elements. Secondary buttons, toggles, less prominent actions.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.5rem' }}>
+  {[
+    ['--bh-color-secondary', 'Default secondary color.'],
+    ['--bh-color-secondary-hover', 'Hover state.'],
+    ['--bh-color-secondary-active', 'Active/pressed state.'],
+    ['--bh-color-secondary-text', 'Text/icon color on secondary backgrounds.'],
+  ].map(([token, desc]) => (
+    <div key={token} style={{ display: 'flex', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '16rem', flexShrink: 0, color: 'var(--bh-color-primary)' }}>{token}</code>
+      <span style={{ fontSize: '0.8rem' }}>{desc}</span>
+    </div>
+  ))}
+</div>
+
+## Status
+
+Semantic colors for feedback and state indication.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.5rem' }}>
+  {[
+    ['--bh-color-success', 'Positive outcomes. Completed, saved, valid.'],
+    ['--bh-color-warning', 'Caution states. Approaching limits, needs attention.'],
+    ['--bh-color-danger', 'Errors, destructive actions, invalid states.'],
+    ['--bh-color-danger-hover', 'Hover state for danger elements.'],
+    ['--bh-color-danger-active', 'Active/pressed state for danger elements.'],
+    ['--bh-color-danger-text', 'Text/icon color on danger backgrounds.'],
+  ].map(([token, desc]) => (
+    <div key={token} style={{ display: 'flex', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '16rem', flexShrink: 0, color: 'var(--bh-color-primary)' }}>{token}</code>
+      <span style={{ fontSize: '0.8rem' }}>{desc}</span>
+    </div>
+  ))}
+</div>
+
+## Borders
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '1rem' }}>
+  {[
+    ['--bh-color-border', 'Default border for inputs, cards, containers.'],
+    ['--bh-color-border-muted', 'Subtle borders. Dividers, table rows.'],
+    ['--bh-color-ring', 'Focus ring color. Keyboard navigation indicator.'],
+  ].map(([token, desc]) => (
+    <div key={token} style={{ display: 'flex', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '16rem', flexShrink: 0, color: 'var(--bh-color-primary)' }}>{token}</code>
+      <span style={{ fontSize: '0.8rem' }}>{desc}</span>
+    </div>
+  ))}
+</div>
+
+## Shadows
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '1rem' }}>
+  {[
+    ['--bh-shadow-surface', 'Default shadow for raised surfaces.'],
+  ].map(([token, desc]) => (
+    <div key={token} style={{ display: 'flex', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '16rem', flexShrink: 0, color: 'var(--bh-color-primary)' }}>{token}</code>
+      <span style={{ fontSize: '0.8rem' }}>{desc}</span>
+    </div>
+  ))}
+</div>
+
+---
+
+## Creating a Custom Theme
+
+```css
+/* my-theme.css */
+@import '@bruk-io/bh-01/tokens';  /* primitives */
+
+:root,
+[data-theme='my-brand'] {
+  /* Surfaces */
+  --bh-color-surface: #fafafa;
+  --bh-color-surface-raised: #ffffff;
+  --bh-color-surface-overlay: #ffffff;
+
+  /* Text */
+  --bh-color-text: #1a1a1a;
+  --bh-color-text-muted: #737373;
+  --bh-color-text-inverse: #ffffff;
+
+  /* Primary — use your brand color */
+  --bh-color-primary: #e11d48;
+  --bh-color-primary-hover: #be123c;
+  --bh-color-primary-active: #9f1239;
+  --bh-color-primary-text: #ffffff;
+
+  /* ... fill in all remaining tokens */
+}
+```
+
+Import your theme instead of the default, and all components adapt automatically.

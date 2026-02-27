@@ -1,0 +1,137 @@
+{/* @ts-nocheck */}
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Tokens/Primitives/Animation & Z-Index" />
+
+# Animation
+
+## Durations
+
+Each bar slides back and forth at its token speed.
+
+<style>
+{`
+@keyframes bh-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(200px); }
+}
+.bh-demo-fast { animation: bh-slide 0.6s ease-in-out infinite; }
+.bh-demo-normal { animation: bh-slide 1.2s ease-in-out infinite; }
+.bh-demo-slow { animation: bh-slide 2.4s ease-in-out infinite; }
+
+@keyframes bh-ease-demo-default { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(200px); } }
+@keyframes bh-ease-demo-in { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(200px); } }
+@keyframes bh-ease-demo-out { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(200px); } }
+@keyframes bh-ease-demo-in-out { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(200px); } }
+
+.bh-ease-default { animation: bh-ease-demo-default 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.bh-ease-in { animation: bh-ease-demo-in 2s cubic-bezier(0.4, 0, 1, 1) infinite; }
+.bh-ease-out { animation: bh-ease-demo-out 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.bh-ease-in-out { animation: bh-ease-demo-in-out 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+`}
+</style>
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <code style={{ fontSize: '0.75rem', width: '14rem', flexShrink: 0 }}>--bh-duration-fast</code>
+    <div style={{ flex: 1, position: 'relative', height: '1.5rem' }}>
+      <div className="bh-demo-fast" style={{ width: '3rem', height: '1.5rem', borderRadius: '0.75rem', background: 'var(--bh-color-primary)' }} />
+    </div>
+    <span style={{ fontSize: '0.75rem', color: 'var(--bh-color-text-muted)', width: '4rem', flexShrink: 0 }}>100ms</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <code style={{ fontSize: '0.75rem', width: '14rem', flexShrink: 0 }}>--bh-duration-normal</code>
+    <div style={{ flex: 1, position: 'relative', height: '1.5rem' }}>
+      <div className="bh-demo-normal" style={{ width: '3rem', height: '1.5rem', borderRadius: '0.75rem', background: 'var(--bh-color-primary)' }} />
+    </div>
+    <span style={{ fontSize: '0.75rem', color: 'var(--bh-color-text-muted)', width: '4rem', flexShrink: 0 }}>200ms</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <code style={{ fontSize: '0.75rem', width: '14rem', flexShrink: 0 }}>--bh-duration-slow</code>
+    <div style={{ flex: 1, position: 'relative', height: '1.5rem' }}>
+      <div className="bh-demo-slow" style={{ width: '3rem', height: '1.5rem', borderRadius: '0.75rem', background: 'var(--bh-color-primary)' }} />
+    </div>
+    <span style={{ fontSize: '0.75rem', color: 'var(--bh-color-text-muted)', width: '4rem', flexShrink: 0 }}>400ms</span>
+  </div>
+</div>
+
+## Easing Curves
+
+Each bar uses the same duration (2s) but a different easing function.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginTop: '1rem' }}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <code style={{ fontSize: '0.75rem', width: '10rem', flexShrink: 0 }}>--bh-ease-default</code>
+    <div style={{ flex: 1, position: 'relative', height: '1.5rem' }}>
+      <div className="bh-ease-default" style={{ width: '2rem', height: '1.5rem', borderRadius: '0.75rem', background: 'var(--bh-color-success)' }} />
+    </div>
+    <code style={{ fontSize: '0.65rem', color: 'var(--bh-color-text-muted)', width: '16rem', flexShrink: 0 }}>cubic-bezier(0.4, 0, 0.2, 1)</code>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <code style={{ fontSize: '0.75rem', width: '10rem', flexShrink: 0 }}>--bh-ease-in</code>
+    <div style={{ flex: 1, position: 'relative', height: '1.5rem' }}>
+      <div className="bh-ease-in" style={{ width: '2rem', height: '1.5rem', borderRadius: '0.75rem', background: 'var(--bh-color-warning)' }} />
+    </div>
+    <code style={{ fontSize: '0.65rem', color: 'var(--bh-color-text-muted)', width: '16rem', flexShrink: 0 }}>cubic-bezier(0.4, 0, 1, 1)</code>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <code style={{ fontSize: '0.75rem', width: '10rem', flexShrink: 0 }}>--bh-ease-out</code>
+    <div style={{ flex: 1, position: 'relative', height: '1.5rem' }}>
+      <div className="bh-ease-out" style={{ width: '2rem', height: '1.5rem', borderRadius: '0.75rem', background: 'var(--bh-color-danger)' }} />
+    </div>
+    <code style={{ fontSize: '0.65rem', color: 'var(--bh-color-text-muted)', width: '16rem', flexShrink: 0 }}>cubic-bezier(0, 0, 0.2, 1)</code>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <code style={{ fontSize: '0.75rem', width: '10rem', flexShrink: 0 }}>--bh-ease-in-out</code>
+    <div style={{ flex: 1, position: 'relative', height: '1.5rem' }}>
+      <div className="bh-ease-in-out" style={{ width: '2rem', height: '1.5rem', borderRadius: '0.75rem', background: 'var(--bh-color-primary)' }} />
+    </div>
+    <code style={{ fontSize: '0.65rem', color: 'var(--bh-color-text-muted)', width: '16rem', flexShrink: 0 }}>cubic-bezier(0.4, 0, 0.2, 1)</code>
+  </div>
+</div>
+
+## Composite Transitions
+
+Pre-composed duration + easing pairs for common use.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
+  {[
+    ['transition-fast', '100ms + ease-default', 'Hover states, toggles'],
+    ['transition-normal', '200ms + ease-default', 'General transitions'],
+    ['transition-slow', '400ms + ease-default', 'Layout shifts, reveals'],
+  ].map(([key, val, usage]) => (
+    <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem 0', borderBottom: '1px solid var(--bh-color-border-muted)' }}>
+      <code style={{ fontSize: '0.75rem', width: '14rem', flexShrink: 0 }}>--bh-{key}</code>
+      <span style={{ fontSize: '0.75rem', color: 'var(--bh-color-text-muted)', width: '14rem', flexShrink: 0 }}>{val}</span>
+      <span style={{ fontSize: '0.75rem', color: 'var(--bh-color-text-muted)' }}>{usage}</span>
+    </div>
+  ))}
+</div>
+
+---
+
+# Z-Index
+
+Layering scale for stacking contexts.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', padding: '1rem' }}>
+  {[
+    ['tooltip', '700', '#7c3aed'],
+    ['popover', '600', '#8b5cf6'],
+    ['modal', '500', '#a78bfa'],
+    ['overlay', '400', '#c4b5fd'],
+    ['fixed', '300', '#60a5fa'],
+    ['sticky', '200', '#93c5fd'],
+    ['dropdown', '100', '#bfdbfe'],
+    ['base', '0', '#e5e7eb'],
+  ].map(([key, val, color], i) => (
+    <div key={key} style={{
+      display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem 1rem',
+      background: color, color: i < 4 ? '#fff' : '#1f2937', borderRadius: '0.375rem',
+      fontSize: '0.875rem', fontFamily: 'var(--bh-font-sans)',
+    }}>
+      <code style={{ fontSize: '0.75rem', width: '10rem' }}>--bh-z-{key}</code>
+      <span>{val}</span>
+    </div>
+  ))}
+</div>
